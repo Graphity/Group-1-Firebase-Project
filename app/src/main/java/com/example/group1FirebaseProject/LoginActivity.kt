@@ -21,10 +21,10 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         init()
-        lisener()
+        listeners()
     }
 
-    private fun lisener() {
+    private fun listeners() {
         loginBtn.setOnClickListener {
             val email = loginEmailET.text.toString()
             val password = loginPasswordET.text.toString()
@@ -48,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    fun  init() {
+    private fun init() {
         loginEmailET = findViewById(R.id.loginEmailET)
         loginPasswordET = findViewById(R.id.loginPasswordET)
         loginBtn = findViewById(R.id.loginBtn)

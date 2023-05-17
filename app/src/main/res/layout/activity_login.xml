@@ -5,19 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center">
 
     <EditText
         android:id="@+id/loginEmailET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:hint="email"/>
 
     <EditText
         android:id="@+id/loginPasswordET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberPassword" />
+        android:inputType="numberPassword"
+        android:hint="password"/>
 
     <Button
         android:id="@+id/loginBtn"
