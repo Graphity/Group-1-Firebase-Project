@@ -22,7 +22,6 @@ class UpdatePasswordActivity : AppCompatActivity() {
 
             auth.currentUser!!.updatePassword(password).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    println("Update Success")
                     Toast.makeText(this, "Successfully updated password", Toast.LENGTH_SHORT).show()
                 } else {
                     Toast.makeText(this, "Failed to update password", Toast.LENGTH_SHORT).show()
