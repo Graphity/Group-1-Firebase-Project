@@ -1,5 +1,6 @@
 package com.example.group1FirebaseProject
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
@@ -18,6 +19,8 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var userNameET : EditText
     private lateinit var userUrlET : EditText
     private lateinit var uploadBtn : Button
+    private lateinit var updateBtn : Button
+    private lateinit var logOutBtn : Button
 
     private val db = Firebase.database.getReference("User")
 
@@ -50,6 +53,13 @@ class ProfileActivity : AppCompatActivity() {
 //            Glide.with(this).load(url).into(imageView)
             db.child(FirebaseAuth.getInstance().uid!!).setValue(userInfo)
         }
+        updateBtn.setOnClickListener {
+            startActivity(Intent(this, UpdatePasswordActivity::class.java))
+        }
+        logOutBtn.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
     }
 
     private fun init(){
@@ -58,6 +68,8 @@ class ProfileActivity : AppCompatActivity() {
         userNameET = findViewById(R.id.userNameET)
         userUrlET = findViewById(R.id.userUrlET)
         uploadBtn = findViewById(R.id.uploadBtn)
+        updateBtn = findViewById(R.id.updateBtn)
+        logOutBtn = findViewById(R.id.logOutBtn)
     }
 }
 
